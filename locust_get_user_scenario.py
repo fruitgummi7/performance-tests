@@ -1,6 +1,4 @@
 from locust import User, between, task
-
-from tools.fakers import fake
 from clients.http.gateway.users.client import build_users_gateway_locust_http_client, UsersGatewayHTTPClient
 from clients.http.gateway.users.schema import CreateUserResponseSchema
 
