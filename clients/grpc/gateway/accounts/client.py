@@ -85,7 +85,7 @@ class AccountsGatewayGRPCClient(GRPCClient):
         """
         return self.stub.OpenCreditCardAccount(request)
 
-    def get_account(self, user_id: str) -> GetAccountsResponse:
+    def get_accounts(self, user_id: str) -> GetAccountsResponse:
         request = GetAccountsRequest(user_id=user_id)
         return self.get_account_api(request)
 
