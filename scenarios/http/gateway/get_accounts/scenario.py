@@ -1,6 +1,8 @@
 from clients.http.gateway.locust import GatewayHTTPTaskSet
-from locust import User, between, task
+from locust import task
 from clients.http.gateway.users.schema import CreateUserResponseSchema
+from tools.locust.user import LocustBaseUser
+
 
 class GetAccountsTaskSet(GatewayHTTPTaskSet):
     create_user_response: CreateUserResponseSchema | None = None
@@ -27,7 +29,5 @@ class GetAccountsTaskSet(GatewayHTTPTaskSet):
 
 
 
-class GetAccountsUser(User):
-    host = "localhost"
+class GetAccountsUser(LocustBaseUser):
     tasks = [GetAccountsTaskSet]
-    wait_time = between(1, 2)
